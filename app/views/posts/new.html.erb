@@ -2,15 +2,19 @@
   <body>
       <%= form_for :post, url: posts_path do |f| %>
       <p>
-        <%= f.label :title %><br>
+        <%= f.label :title %>
+      </p>
+      <p>
         <%= f.text_field :title %>
       </p>
       <p>
-        <%= f.label :content %><br>
-        <%= f.text_area :content %>
+        <%= f.label :content %>
       </p>
       <p>
-        <%= f.submit %>
+        <%= f.text_area :content, :class => 'materialize-textarea' %>
+      </p>
+      <p>
+        <%= f.submit :class => 'btn waves-effect waves-light' %>
       </p>
     <% end %>
   </body>
