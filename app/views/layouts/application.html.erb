@@ -1,14 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Devdemetriblog</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fun little responsive app to help indecisive friend groups.">
+    <meta name="keywords" content="DeveloperDemetri, Demetri, Shargani, DevDemetri, Ruby, Rails ">
+    <meta name="author" content="DeveloperDemetri">
+    <title>DevDemetriBlog</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  <body>
-    <%= yield %>
-  </body>
+      ga('create', 'UA-75806542-5', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <header>
+  <nav>
+    <div class="nav-wrapper deep-purple lighten-1 grey-text text-lighten-4">
+      <a id="nav-logo" href="/" class="brand-logo">DevDemetri Blog</a>
+    </div>
+  </nav>
+  </header>
+  <main>
+    <body class="grey lighten-4 blue-grey-text text-darken-4">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </body>
+  </main>
+  <footer class="page-footer deep-purple lighten-1 grey-text text-lighten-4">
+    <div class="container grey-text text-lighten-4">
+      <div id="contact" class="center-align">
+        <p class="no-margin tiny-text"><a class="grey-text text-lighten-4" href="https://github.com/developerDemetri/rails-blog" target="_blank">Check out the code on GitHub <i class="fa fa-github"></i></a></p>
+        <p class="no-margin tiny-text"><a class="grey-text text-lighten-4" href="https://developerdemetri.com/" target="_blank"><i class="fa fa-copyright"></i> 2016 DeveloperDemetri</a></p>
+      </div>
+    </div>
+  </footer>
 </html>

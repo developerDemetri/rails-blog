@@ -1,0 +1,40 @@
+@import "materialize/components/color";
+
+$primary-color: color("deep-purple", "accent-1") !default;
+$primary-color-light: false !default;
+$primary-color-dark: false !default;
+@if not $primary-color-light {
+  $primary-color-light: lighten($primary-color, 15%);
+}
+@if not $primary-color-dark {
+  $primary-color-dark: darken($primary-color, 15%);
+}
+$secondary-color: color("deep-purple", "lighten-3") !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+$link-color: color("cyan", "accent-3") !default;
+
+@import "materialize";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #fcfcfc;
+  color: #263238;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.no-margin {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+.brand-logo {
+  margin-left: 2rem;
+}
