@@ -1,0 +1,8 @@
+# fill out all of these variables and rename file to 'local_env.yml'
+
+MYSQL_USERNAME:
+MYSQL_PASSWORD:
+MYSQL_HOST:
+MYSQL_SOCKET:
+MYSQL_DB:
+MYSQL_TEST_DB:

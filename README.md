@@ -1,2 +1,3 @@
-# rails-blog
-Learning Ruby on Rails by making a simple little blog site for myself
+# DevDemetriBlog
+
+Simple little blog app for me to learn Ruby on Rails
