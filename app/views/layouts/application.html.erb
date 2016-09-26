@@ -26,6 +26,13 @@
   <nav>
     <div class="nav-wrapper deep-purple lighten-1 grey-text text-lighten-4">
       <a id="nav-logo" href="/" class="brand-logo">DevDemetri Blog</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user %>
+          <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
+          <% else %>
+          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+          <% end %>
+      </ul>
     </div>
   </nav>
   </header>
