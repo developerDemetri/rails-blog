@@ -28,9 +28,11 @@
       <a id="nav-logo" href="/" class="brand-logo">DevDemetri Blog</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if current_user %>
-          <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
+            <li><%= current_user.username %></li>
+            <li><%= link_to "Logout", '/logout' %></li>
           <% else %>
-          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+            <li><%= link_to 'Login', '/login' %></li>
+            <li><%= link_to 'Signup', '/signup' %></li>
           <% end %>
       </ul>
     </div>
