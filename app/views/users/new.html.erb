@@ -1,0 +1,28 @@
+<h3 class="center-align">Register</h3>
+<div class="row">
+  <div class="col m6 offset-m3">
+    <%= form_for :user, url: users_path do |f| %>
+      <p>
+        <%= f.label :username %>
+      </p>
+      <p>
+        <%= f.text_field :username %>
+      </p>
+      <p>
+        <%= f.label :password %>
+      </p>
+      <p>
+        <%= f.password_field :password %>
+      </p>
+      <p>
+        <%= f.label :password_confirmation %>
+      </p>
+      <p>
+        <%= f.password_field :password_confirmation %>
+      </p>
+      <p>
+        <%= f.submit "Register", :class => 'btn waves-effect waves-light' %>
+      </p>
+    <% end %>
+  </div>
+</div>

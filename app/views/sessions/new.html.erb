@@ -1,0 +1,8 @@
+<h3 class="center-align">Log In</h3>
+<div class="row">
+  <%= form_tag '/login', :class => 'col m6 offset-m3' do %>
+    Username: <%= text_field_tag :username %>
+    Password: <%= password_field_tag :password %>
+    <%= submit_tag "Log In", :class => 'btn' %>
+  <% end %>
+</div>

@@ -1,11 +1,20 @@
 class PostsController < ApplicationController
+  before_filter :authorize
+
   def new
+    @role = session[:role]
+    if @role != 'admin'
+      redirect_to '/'
+    end
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.save
-    redirect_to @post
+    @role = session[:role]
+    if @role == 'admin'
+      @post = Post.new(post_params)
+      @post.save
+      redirect_to @post
+    end
   end
 
   def show
