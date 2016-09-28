@@ -1,28 +1,10 @@
-<h3 class="center-align">Register</h3>
-<div class="row">
-  <div class="col m6 offset-m3">
-    <%= form_for :user, url: users_path do |f| %>
-      <p>
-        <%= f.label :username %>
-      </p>
-      <p>
-        <%= f.text_field :username %>
-      </p>
-      <p>
-        <%= f.label :password %>
-      </p>
-      <p>
-        <%= f.password_field :password %>
-      </p>
-      <p>
-        <%= f.label :password_confirmation %>
-      </p>
-      <p>
-        <%= f.password_field :password_confirmation %>
-      </p>
-      <p>
-        <%= f.submit "Register", :class => 'btn waves-effect waves-light' %>
-      </p>
+<h3 class="center-align">Welcome <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+  <div class="row">
+    <%= form_tag '/signup', :class => 'col m6 offset-m3' do %>
+      Username: <%= text_field_tag :username %>
+      Password: <%= password_field_tag :password %>
+      Confirm Password: <%= password_field_tag :password_confirmation %>
+      <%= submit_tag "Register", :class => 'btn waves-effect waves-light' %>
     <% end %>
   </div>
 </div>

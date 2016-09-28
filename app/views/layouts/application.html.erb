@@ -23,20 +23,23 @@
     </script>
   </head>
   <header>
-  <nav>
-    <div class="nav-wrapper deep-purple lighten-1 grey-text text-lighten-4">
-      <a id="nav-logo" href="/" class="brand-logo">DevDemetri Blog</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <% if current_user %>
-            <li><%= current_user.username %></li>
-            <li><%= link_to "Logout", '/logout' %></li>
-          <% else %>
-            <li><%= link_to 'Login', '/login' %></li>
-            <li><%= link_to 'Signup', '/signup' %></li>
-          <% end %>
-      </ul>
-    </div>
-  </nav>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper deep-purple lighten-1 grey-text text-lighten-4">
+        <a id="nav-logo-normal" href="/" class="brand-logo hide-on-med-and-down">DevDemetri Blog</a>
+        <a id="nav-logo-small" href="/" class="left brand-logo hide-on-med-and-up"><i class="fa fa-home" aria-hidden="true"></i></a>
+        <ul id="nav-auth" class="right">
+          <% if current_user %>
+              <li><%= current_user.username %></li>
+              <li><%= link_to "Logout", '/logout' %></li>
+            <% else %>
+              <li><%= link_to 'Login', '/login' %></li>
+              <li><%= link_to 'Signup', '/signup' %></li>
+            <% end %>
+        </ul>
+      </div>
+    </nav>
+  </div>
   </header>
   <main>
     <body class="grey lighten-4 blue-grey-text text-darken-4">
