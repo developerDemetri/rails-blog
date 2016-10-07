@@ -1,6 +1,6 @@
 function submitComment(post_id, username) {
-  let box = $("#comment-box-"+post_id);
-  let content = box.val();
+  let comment_box = $("#comment-box-"+post_id);
+  let content = comment_box.val();
   let params = {
     comment: {
       content: content,
@@ -8,7 +8,7 @@ function submitComment(post_id, username) {
       user: username
     }
   }
-  box.val('')
+  comment_box.val('');
   $.post("/comment", params).done(function(data) {
     if (data.status === 201) {
       appendComment(params.comment);
@@ -17,7 +17,7 @@ function submitComment(post_id, username) {
 }
 
 function appendComment(comment) {
-  let comment_box = $('#new-comments-'+comment.post_id);
+  let new_comment_box = $('#new-comments-'+comment.post_id);
   let comment_html = '<p class="left-align">'+comment.content+' - <strong>'+comment.user+'</strong></p>';
-  comment_box.append(comment_html);
+  new_comment_box.append(comment_html);
 }
