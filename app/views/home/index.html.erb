@@ -1,16 +1,32 @@
 <div class="container">
   <div class="row">
-    <h2 class="center-align">Latest Posts:</h2>
+    <h3 class="center-align">Latest Posts</h3>
   </div>
   <% @posts.each do |post| %>
+    <% @comments = post.comments.order('created_at DESC') %>
     <div class="row">
       <div class="card">
-            <div class="card-content">
-              <span class="card-title"><%= post.title %></span>
-              <p><%= post.content %></p>
-              <p class="card-stamp right-align"><%= post.updated_at %></p>
+          <div class="card-content">
+            <span class="card-title"><%= post.title %></span>
+            <p><%= post.content %></p>
+            <p class="card-stamp right-align"><%= post.updated_at %></p>
+          </div>
+          <div class="card-action">
+            <% @comments.each do |comment| %>
+              <p class="left-align"><%= comment.content %> - <strong><%= comment.user %></strong></p>
+            <% end %>
+            <div id="new-comments-<%= post.id %>">
+              <!-- ajax updated -->
+            </div>
+            <div class="row">
+              <% if current_user %>
+                <input id="comment-box-<%= post.id %>" class="col s8 offset-s1" type="text" placeholder="comments not fully implemented yet ):" name="<%= post.id %>-comment" id="<%= post.id %>-comment"/><a class="btn-floating waves-effect waves-light" onclick="submitComment(<%= post.id %>,'<%= current_user.username %>');"><i class="fa fa-paper-plane btn-fa" aria-hidden="true"></i></a>
+              <% else %>
+                <h6 class="center-align"><a class="non-awkward-link" href="/login">Sign In</a> to comment.</h6>
+              <% end %>
             </div>
           </div>
+        </div>
     </div>
   <% end %>
 </div>
