@@ -1,7 +1,7 @@
 function submitComment(post_id, username) {
-  let comment_box = $("#comment-box-"+post_id);
-  let content = comment_box.val();
-  let params = {
+  var comment_box = $("#comment-box-"+post_id);
+  var content = comment_box.val();
+  var params = {
     comment: {
       content: content,
       post_id: post_id,
@@ -17,7 +17,7 @@ function submitComment(post_id, username) {
 }
 
 function appendComment(comment) {
-  let new_comment_box = $('#new-comments-'+comment.post_id);
-  let comment_html = '<p class="left-align">'+comment.content+' - <strong>'+comment.user+'</strong></p>';
+  var new_comment_box = $('#new-comments-'+comment.post_id);
+  var comment_html = '<p class="left-align">'+comment.content+' - <strong>'+comment.user+'</strong></p>';
   new_comment_box.append(comment_html);
 }
