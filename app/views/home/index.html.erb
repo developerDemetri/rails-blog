@@ -15,6 +15,9 @@
             <% @comments.each do |comment| %>
               <p class="left-align"><%= comment.content %> - <strong><%= comment.user %></strong></p>
             <% end %>
+            <div id="new-comments-<%= post.id %>">
+              <!-- ajax updated -->
+            </div>
             <div class="row">
               <% if current_user %>
                 <input id="comment-box-<%= post.id %>" class="col s8 offset-s1" type="text" placeholder="comments not fully implemented yet ):" name="<%= post.id %>-comment" id="<%= post.id %>-comment"/><a class="btn-floating waves-effect waves-light" onclick="submitComment(<%= post.id %>,'<%= current_user.username %>');"><i class="fa fa-paper-plane btn-fa" aria-hidden="true"></i></a>

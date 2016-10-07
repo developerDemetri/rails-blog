@@ -2,11 +2,9 @@ class CommentsController < ApplicationController
   before_filter :authorize
 
   def create
-    @role = session[:role]
-    if @role
       @comment = Comment.new(comment_params)
       @comment.save
-    end
+      render :json => { :status => 201, :message => "Successfully Added Comment" }
   end
 
   private
