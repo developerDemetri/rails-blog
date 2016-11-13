@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# MomentJS
+gem 'momentjs-rails'
 # Materialize CSS
 gem 'materialize-sass'
 # FontAwesome
