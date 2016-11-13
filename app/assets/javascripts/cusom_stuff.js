@@ -21,3 +21,16 @@ function appendComment(comment) {
   var comment_html = '<p class="left-align">'+comment.content+' - <strong>'+comment.user+'</strong></p>';
   new_comment_box.append(comment_html);
 }
+
+function setTime(timestampeId, time) {
+  var styledTime = moment.utc(time);
+  var curr = moment();
+  var cutoff = moment.utc(time).add(25, 'days');
+  if (curr.isBefore(cutoff)) {
+    styledTime = styledTime.fromNow();
+  }
+  else {
+    styledTime = styledTime.format('MMMM Do YYYY');
+  }
+  $('#'+timestampeId).append(styledTime);
+}

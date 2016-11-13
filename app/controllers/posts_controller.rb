@@ -13,12 +13,8 @@ class PostsController < ApplicationController
     if @role == 'admin'
       @post = Post.new(post_params)
       @post.save
-      redirect_to @post
+      redirect_to '/'
     end
-  end
-
-  def show
-    @post = Post.find(params[:id])
   end
 
   private
