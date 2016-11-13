@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <h3 class="center-align">Latest Posts</h3>
+    <% if current_user and session[:role] == 'admin' %>
+      <a href="/posts/new" class="btn-floating waves-effect waves-light pull-right"><i class="fa fa-pencil btn-fa" aria-hidden="true"></i></a>
+    <% end %>
   </div>
   <% @posts.each do |post| %>
     <% @comments = post.comments.order('created_at DESC') %>
